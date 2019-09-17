@@ -45,7 +45,7 @@ RUN addgroup -g 1000 node \
     && rm -Rf "node-v$NODE_VERSION" \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 
-RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar git \
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
   ; do \
@@ -63,3 +63,5 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar git \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   && apk del .build-deps-yarn
+
+RUN apk add curl git
