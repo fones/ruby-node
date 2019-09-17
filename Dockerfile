@@ -14,7 +14,6 @@ RUN addgroup -g 1000 node \
         libgcc \
         linux-headers \
         make \
-        git \
         python \
   # gpg keys listed at https://github.com/nodejs/node#release-team
   && for key in \
@@ -46,7 +45,7 @@ RUN addgroup -g 1000 node \
     && rm -Rf "node-v$NODE_VERSION" \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 
-RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
+RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar git \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
   ; do \
