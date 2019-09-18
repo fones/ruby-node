@@ -1,3 +1,3 @@
 # Docker ruby-node
 
-Ruby Alpine with Node installed.
+Ruby Slim with Node installed.
