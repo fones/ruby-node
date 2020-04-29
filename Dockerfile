@@ -1,4 +1,4 @@
-FROM ruby:2.3.8-slim
+FROM ruby:2.6.5-slim
 ENV NODE_VERSION 10.15.3
 
 ENV LANG C.UTF-8
