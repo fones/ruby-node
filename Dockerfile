@@ -1,5 +1,5 @@
 FROM ruby:2.6.5-slim
-ENV NODE_VERSION 10.15.3
+ENV NODE_VERSION 12.19.0
 
 ENV LANG C.UTF-8
 
@@ -69,4 +69,4 @@ RUN YARN_VERSION=$(curl -sSL --compressed https://yarnpkg.com/latest-version) \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-RUN apt-get update && apt-get install -y curl git build-essential default-libmysqlclient-dev
+RUN apt-get update && apt-get install -y curl git build-essential default-libmysqlclient-dev shared-mime-info
