@@ -1,9 +1,10 @@
-FROM ruby:2.6.10-slim
+FROM ruby:2.7.8-slim
 ENV NODE_VERSION=24.14.0
 
 ENV LANG=C.UTF-8
 
-RUN apt-get update && apt-get install -y gnupg curl
+RUN apt-get update && apt-get install -y --no-install-recommends gnupg curl \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
@@ -48,4 +49,5 @@ RUN buildDeps='xz-utils' \
 
 RUN npm install -g yarn
 
-RUN apt-get update && apt-get install -y curl git build-essential default-libmysqlclient-dev shared-mime-info
+RUN apt-get update && apt-get install -y --no-install-recommends git build-essential default-libmysqlclient-dev shared-mime-info \
+  && rm -rf /var/lib/apt/lists/*
