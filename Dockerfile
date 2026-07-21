@@ -1,4 +1,4 @@
-FROM ruby:3.2.6-slim
+FROM ruby:3.4.10-slim
 ENV NODE_VERSION=24.14.0
 
 ENV LANG=C.UTF-8
