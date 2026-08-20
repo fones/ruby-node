@@ -49,5 +49,5 @@ RUN buildDeps='xz-utils' \
 
 RUN npm install -g yarn
 
-RUN apt-get update && apt-get install -y --no-install-recommends git build-essential default-libmysqlclient-dev shared-mime-info \
+RUN apt-get update && apt-get install -y --no-install-recommends git build-essential default-libmysqlclient-dev shared-mime-info imagemagick \
   && rm -rf /var/lib/apt/lists/*
